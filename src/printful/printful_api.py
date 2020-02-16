@@ -3,19 +3,23 @@
 # importing the requests library
 import requests
 
+import base64
+
 def createItem (url_path):
 
     # defining the api-endpoint
     API_ENDPOINT = "https://api.printful.com/store/products"
 
     # your API key here
-    API_KEY = "XXXX"
+    API_KEY_BYTES = b'XXXXX'
+    BASE_64_API_BYTES = base64.b64encode(API_KEY_BYTES)
+    BASE_64_API = (BASE_64_API_BYTES).decode("utf-8")
 
     # data to be sent to api
     data = {
         "sync_product": {
             "name": "API EXAMPLE",
-            "thumbnail": "https://i.redd.it/jdvvnuqq4ay21.jpg"
+            "thumbnail": "https://i.redd.it/jdvvnuqq4ay21.jpg",
         },
         "sync_variants": [
             {
@@ -23,11 +27,11 @@ def createItem (url_path):
                 "variant_id": 4011,
                 "files": [
                     {
-                        "url": "https://i.redd.it/jdvvnuqq4ay21.jpg"
+                        "url": "https://i.redd.it/jdvvnuqq4ay21.jpg",
                     },
                     {
                         "type": "back",
-                        "url": "https://i.redd.it/jdvvnuqq4ay21.jpg"
+                        "url": "https://i.redd.it/jdvvnuqq4ay21.jpg",
                     }
                 ]
             },
@@ -36,11 +40,11 @@ def createItem (url_path):
                 "variant_id": 4012,
                 "files": [
                     {
-                        "url": "https://i.redd.it/jdvvnuqq4ay21.jpg"
+                        "url": "https://i.redd.it/jdvvnuqq4ay21.jpg",
                     },
                     {
                         "type": "back",
-                        "url": "https://i.redd.it/jdvvnuqq4ay21.jpg"
+                        "url": "https://i.redd.it/jdvvnuqq4ay21.jpg",
                     }
                 ]
             }
@@ -48,7 +52,7 @@ def createItem (url_path):
     }
 
     # sending post request and saving response as response object
-    r = requests.post(url = API_ENDPOINT, data = data, headers = {"Authorization" : "Basic XXXX"})
+    r = requests.post(url = API_ENDPOINT, data = data, headers = {"Authorization" : ("Basic " + BASE_64_API)})
 
     # extracting response text
     pastebin_url = r.text
