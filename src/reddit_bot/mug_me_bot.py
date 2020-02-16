@@ -4,7 +4,8 @@
 import praw
 
 # Create Reddit instance using config from praw.ini
-reddit = praw.Reddit('mugme-bot')
+#reddit = praw.Reddit('mugme-bot')
+reddit = praw.Reddit()
 subreddit = reddit.subreddit('testingground4bots')
 mugme_user = reddit.user.me()
 
