@@ -52,7 +52,7 @@ def createItem (url_path):
     }
 
     # sending post request and saving response as response object
-    r = requests.post(url = API_ENDPOINT, data = data, headers = {"Authorization" : ("Basic " + BASE_64_API)})
+    r = requests.post(url = API_ENDPOINT, json = data, headers = {"Authorization" : ("Basic " + BASE_64_API)})
 
     # extracting response text
     pastebin_url = r.text
