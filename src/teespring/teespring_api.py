@@ -6,7 +6,7 @@ import requests
 import base64
 
 # your API key here
-API_KEY_BYTES = b'2r2ji2j8-igof-kw8t:fkg2-gjq8zx09253i'
+API_KEY_BYTES = b'XXXXXXXXXXXXXXXXX'
 BASE_64_API_BYTES = base64.b64encode(API_KEY_BYTES)
 BASE_64_API = (BASE_64_API_BYTES).decode("utf-8")
 
