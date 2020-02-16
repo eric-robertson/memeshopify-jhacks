@@ -19,7 +19,7 @@ def createItem (url_path):
     data = {
         "sync_product": {
             "name": "API EXAMPLE",
-            "thumbnail": "https://i.redd.it/jdvvnuqq4ay21.jpg",
+            "thumbnail": url_path,
         },
         "sync_variants": [
             {
@@ -27,12 +27,8 @@ def createItem (url_path):
                 "variant_id": 4011,
                 "files": [
                     {
-                        "url": "https://i.redd.it/jdvvnuqq4ay21.jpg",
+                        "url": url_path,
                     },
-                    {
-                        "type": "back",
-                        "url": "https://i.redd.it/jdvvnuqq4ay21.jpg",
-                    }
                 ]
             },
             {
@@ -40,12 +36,17 @@ def createItem (url_path):
                 "variant_id": 4012,
                 "files": [
                     {
-                        "url": "https://i.redd.it/jdvvnuqq4ay21.jpg",
+                        "url": url_path,
                     },
+                ]
+            },
+            {
+                "retail_price": "21.00",
+                "variant_id": 4013,
+                "files": [
                     {
-                        "type": "back",
-                        "url": "https://i.redd.it/jdvvnuqq4ay21.jpg",
-                    }
+                        "url": url_path,
+                    },
                 ]
             }
         ]
@@ -150,4 +151,4 @@ def modifyItem ():
 
 ##MAIN TEST
 
-createItem("test")
+createItem("https://i.redd.it/jdvvnuqq4ay21.jpg")
