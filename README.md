@@ -1,5 +1,5 @@
-Meme Shopify JHacks
-Don
-Eric
-Asher
-Evvan
+# Meme Shopify JHacks
+- Don
+- Eric
+- Asher
+- Evvan
