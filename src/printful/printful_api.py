@@ -5,15 +5,15 @@ import requests
 
 import base64
 
+# your API key here
+API_KEY_BYTES = b'XXXXXXXXXXXXXXXXX'
+BASE_64_API_BYTES = base64.b64encode(API_KEY_BYTES)
+BASE_64_API = (BASE_64_API_BYTES).decode("utf-8")
+
 def createItem (url_path):
 
     # defining the api-endpoint
     API_ENDPOINT = "https://api.printful.com/store/products"
-
-    # your API key here
-    API_KEY_BYTES = b'XXXXX'
-    BASE_64_API_BYTES = base64.b64encode(API_KEY_BYTES)
-    BASE_64_API = (BASE_64_API_BYTES).decode("utf-8")
 
     # data to be sent to api
     data = {
